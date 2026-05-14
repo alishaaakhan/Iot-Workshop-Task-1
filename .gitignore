@@ -1,0 +1,7 @@
+node_modules/
+
+# Local DB + state (Render uses disk at /var/data via env vars)
+database.sqlite
+database.sqlite-*
+lcd.txt
+

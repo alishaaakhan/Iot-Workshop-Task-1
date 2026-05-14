@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SISTec IoT Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-slate-950 via-fuchsia-950 to-slate-900 text-slate-100">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-7 lg:p-10 shadow-2xl">
+          <div class="flex items-center gap-3">
+            <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-fuchsia-500 to-amber-400 flex items-center justify-center font-black text-slate-950">
+              TP
+            </div>
+            <div>
+              <div class="text-sm tracking-widest text-white/70">SISTec IoT Application 2026</div>
+              <h1 class="text-2xl lg:text-3xl font-extrabold leading-tight">Create your dashboard account</h1>
+            </div>
+          </div>
+
+          <div class="mt-7 rounded-xl border border-white/10 bg-white/5 p-5">
+            <div class="text-sm font-semibold">Built by Tech Pirates</div>
+            <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-white/80">
+              <div><span class="font-semibold text-white">Payal Goel</span> (Team Lead)</div>
+              <div>Harshita Mulani</div>
+              <div>Alisha Khan</div>
+              <div>Ambar Gupta</div>
+              <div>Vipin Tomar</div>
+            </div>
+          </div>
+
+          <div class="mt-6 text-sm text-white/70">
+            After registration, login to access the dashboard and LCD control.
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white text-slate-900 shadow-2xl p-7 lg:p-10">
+          <h2 class="text-2xl font-extrabold">Register</h2>
+          <p class="text-slate-600 mt-1">It takes less than a minute</p>
+
+          <form id="registerForm" class="mt-6 space-y-4" method="POST" action="/register">
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="mt-1 w-full border border-slate-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-fuchsia-500"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="mt-1 w-full border border-slate-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-fuchsia-500"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="mt-1 w-full border border-slate-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-fuchsia-500"
+                required
+                minlength="3"
+              />
+              <div class="text-xs text-slate-500 mt-1">Minimum 3 characters</div>
+            </div>
+
+            <button
+              class="w-full bg-gradient-to-r from-fuchsia-700 to-amber-500 text-white rounded-xl py-3 font-semibold shadow hover:opacity-95"
+              type="submit"
+            >
+              Create account
+            </button>
+          </form>
+
+          <div class="mt-5 text-sm text-slate-700">
+            Already registered?
+            <a class="text-fuchsia-700 font-semibold" href="/">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("registerForm");
+      form.addEventListener("submit", (e) => {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        if (!name || !email || !password) {
+          e.preventDefault();
+          alert("Please fill all fields.");
+        }
+      });
+    </script>
+  </body>
+</html>
+

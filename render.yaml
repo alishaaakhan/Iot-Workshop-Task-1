@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: sistec-iot-application-2026
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      # Persisted paths (requires the disk below)
+      - key: SQLITE_PATH
+        value: /var/data/database.sqlite
+      - key: LCD_PATH
+        value: /var/data/lcd.txt
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+

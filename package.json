@@ -1,0 +1,17 @@
+{
+  "name": "sistec-iot-application-2026",
+  "version": "1.0.0",
+  "description": "Beginner IoT dashboard (ESP8266 + DHT11 + LCD) with Node/Express + SQLite.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "sqlite3": "^5.1.7"
+  }
+}
